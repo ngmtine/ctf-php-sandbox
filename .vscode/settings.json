@@ -24,5 +24,7 @@
     "Prettier-SQL.keywordCase": "upper",
     "Prettier-SQL.newlineBeforeSemicolon": true,
     "Prettier-SQL.tabSizeOverride": 4,
-    "Prettier-SQL.ignoreTabSettings": true
+    "Prettier-SQL.ignoreTabSettings": true,
+    "Prettier-SQL.expressionWidth": 50,
+    "Prettier-SQL.indentStyle": "standard"
 }
