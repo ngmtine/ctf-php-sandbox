@@ -16,5 +16,13 @@
     },
     "[php]": {
         "editor.defaultFormatter": "svipas.prettier-plus"
-    }
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+    },
+    "Prettier-SQL.SQLFlavourOverride": "postgresql",
+    "Prettier-SQL.keywordCase": "upper",
+    "Prettier-SQL.newlineBeforeSemicolon": true,
+    "Prettier-SQL.tabSizeOverride": 4,
+    "Prettier-SQL.ignoreTabSettings": true
 }
