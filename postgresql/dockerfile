@@ -4,7 +4,15 @@ FROM postgres:latest
 # Creating a database, user and password for application use
 ENV POSTGRES_USER dockeruser
 ENV POSTGRES_PASSWORD dockerpass
-ENV POSTGRES_DB mydatabase
+ENV POSTGRES_DB main
+
+# docker compose build --no-cache
+# してもdbの情報は過去のものが再利用されることに注意
+# これはゲータボリュームの内容は明示的に削除しない限り残り続けるのが原因
+# docker volume ls
+# docker volume rm hogehoge
+# 同じくdocker-compose.yamlの中でvolumes: 項目でボリュームマウントしている場合はそれも削除する必要がある
+
 
 # Copying the initialization script to allow it to run on startup
-# COPY init.sql /docker-entrypoint-initdb.d/init.sql 
+COPY init.sql /docker-entrypoint-initdb.d/init.sql 

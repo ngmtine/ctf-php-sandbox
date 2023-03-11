@@ -17,10 +17,10 @@ services:
             - "5432:5432"
         volumes:
             - ./postgresql/data:/var/lib/postgresql/data/
-        environment:
-            POSTGRES_USER: dockeruser
-            POSTGRES_PASSWORD: dockerpass
-            POSTGRES_DB: mydatabase
+        # environment:
+        #     POSTGRES_USER: dockeruser
+        #     POSTGRES_PASSWORD: password
+        #     POSTGRES_DB: main
     php:
         container_name: php
         build:
