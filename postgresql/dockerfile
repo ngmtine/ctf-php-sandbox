@@ -1,0 +1,10 @@
+# Base image
+FROM postgres:latest
+
+# Creating a database, user and password for application use
+ENV POSTGRES_USER dockeruser
+ENV POSTGRES_PASSWORD dockerpass
+ENV POSTGRES_DB mydatabase
+
+# Copying the initialization script to allow it to run on startup
+# COPY init.sql /docker-entrypoint-initdb.d/init.sql 
