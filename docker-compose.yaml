@@ -7,8 +7,8 @@ services:
         ports:
             - "8080:80"
         volumes:
-            - ./nginx/root:/nginx
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./src:/usr/share/nginx
     db:
         container_name: postgresql
         build:
@@ -16,10 +16,17 @@ services:
         ports:
             - "5432:5432"
         volumes:
-            - ./postgres_data:/var/lib/postgresql/data/
+            - ./postgresql/data:/var/lib/postgresql/data/
         environment:
             POSTGRES_USER: dockeruser
             POSTGRES_PASSWORD: dockerpass
             POSTGRES_DB: mydatabase
-volumes:
-    postgres_data:
+    php:
+        container_name: php
+        build:
+            context: ./php
+        ports:
+            - "9000:9000"
+        volumes:
+            # - ./php/php-fpm.ini:/usr/local/etc/php/conf.d/php-fpm.ini
+            - ./src:/usr/share/nginx
